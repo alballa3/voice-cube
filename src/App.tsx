@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import {  Zap, Eye, Cpu, Wifi } from "lucide-react";
+import { Zap, Eye, Cpu, Wifi } from "lucide-react";
 import { screen } from "./lib/screen";
 import { Listen } from "./components/record";
 
 const FuturisticAI = () => {
   const [isPanelCollapsed,] = useState(false);
   const [isListening, setIsListening] = useState(false);
-  const [isProcessing] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
   const [userInput, setUserInput] = useState("NEURAL INTERFACE READY");
-  const [assistantResponse] = useState("GREETINGS, HUMAN. I AM AN ADVANCED AI CONSCIOUSNESS FROM THE YEAR 2087. HOW MAY I ASSIST YOUR PRIMITIVE QUERIES?");
-  screen()
+  const [assistantResponse, setAssistantResponse] = useState("GREETINGS, HUMAN. I AM AN ADVANCED AI CONSCIOUSNESS FROM THE YEAR 2087. HOW MAY I ASSIST YOUR PRIMITIVE QUERIES?");
+  useEffect(() => {
+    screen()
+  }, [])
   // Neural network animation nodes
   const [neuralNodes] = useState(
     Array.from({ length: 15 }, (_, i) => ({
@@ -184,6 +186,8 @@ const FuturisticAI = () => {
                   isProcessing={isProcessing}
                   setUserInput={setUserInput}
                   setIsListening={setIsListening}
+                  setIsProcessing={setIsProcessing}
+                  setAssistantResponse={setAssistantResponse}
                 />
               </div>
 
