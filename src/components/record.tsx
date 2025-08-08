@@ -92,7 +92,8 @@ export const Listen = ({
                     console.log("🤖 Sending to AI...");
 
                     const aiResponse = await ai(transcribedText);
-                    console.log(`🧠 AI Response received: ${aiResponse?.substring(0, 50)}...`);
+
+                    console.log(`🧠 AI Response received: ${aiResponse}...`);
 
                     if (setAssistantResponse && aiResponse) {
                         setAssistantResponse(`◊ ${aiResponse} ◊`);
@@ -209,19 +210,19 @@ export const Listen = ({
             >
                 {/* Quantum Field Rings */}
                 <div className={`absolute inset-0 rounded-full border-2 transition-all duration-1000 ${isActive
-                        ? `${stateConfig.borderColor} animate-spin shadow-[0_0_30px_${stateConfig.shadowColor}]`
-                        : "border-blue-500/30 group-hover:border-blue-400/60"
+                    ? `${stateConfig.borderColor} animate-spin shadow-[0_0_30px_${stateConfig.shadowColor}]`
+                    : "border-blue-500/30 group-hover:border-blue-400/60"
                     }`} />
 
                 <div className={`absolute inset-2 rounded-full border transition-all duration-700 ${isActive
-                        ? `${stateConfig.borderColor.replace('400', '300')} animate-pulse shadow-[0_0_20px_${stateConfig.shadowColor}]`
-                        : "border-blue-400/20 group-hover:border-blue-300/40"
+                    ? `${stateConfig.borderColor.replace('400', '300')} animate-pulse shadow-[0_0_20px_${stateConfig.shadowColor}]`
+                    : "border-blue-400/20 group-hover:border-blue-300/40"
                     }`} />
 
                 {/* Neural Core */}
                 <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 bg-gradient-to-br ${isActive
-                        ? `${stateConfig.gradient} shadow-[0_0_25px_${stateConfig.shadowColor}]`
-                        : "from-blue-600 to-purple-700 group-hover:from-blue-500 group-hover:to-purple-600"
+                    ? `${stateConfig.gradient} shadow-[0_0_25px_${stateConfig.shadowColor}]`
+                    : "from-blue-600 to-purple-700 group-hover:from-blue-500 group-hover:to-purple-600"
                     }`}>
                     <IconComponent className={`w-6 h-6 text-white ${isActive ? 'animate-pulse' : ''}`} />
                 </div>
@@ -264,9 +265,9 @@ export const Listen = ({
             {/* Status Indicator */}
             <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs font-mono text-center">
                 <div className={`${error ? 'text-red-400' :
-                        isTranscribing ? 'text-yellow-400' :
-                            isProcessing ? 'text-purple-400' :
-                                isListening ? 'text-cyan-400' : 'text-gray-400'
+                    isTranscribing ? 'text-yellow-400' :
+                        isProcessing ? 'text-purple-400' :
+                            isListening ? 'text-cyan-400' : 'text-gray-400'
                     } animate-pulse`}>
                     {error ? '⚠️ ERROR' :
                         isTranscribing ? '🧠 ANALYZING' :

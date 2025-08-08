@@ -1,7 +1,7 @@
 import {
     getCurrentWindow,
     PhysicalPosition,
-    currentMonitor
+    currentMonitor,
 } from "@tauri-apps/api/window";
 
 export async function screen() {
@@ -16,6 +16,7 @@ export async function screen() {
     const screenWidth = monitor.size.width;
     const screenHeight = monitor.size.height;
     const appSize = await win.innerSize(); // Your app window size
+    console.log(screenWidth, screenHeight, appSize)
 
     const x = (screenWidth - appSize.width) / 2;
     const y = (screenHeight - appSize.height) / 2;
